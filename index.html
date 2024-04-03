@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DncWeather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="api.js"></script>
+</head>
+<body>
+    <!-- menu inicial-->
+    <nav id="principal">
+        <h1>DncWeather</h1>
+        <div id="menu">
+            <a href="#endereco">Endereços</a>
+            <a href="#previsao">Previsão do tempo</a>
+        </div>
+    </nav>
+        <!-- fase1-->
+        <section>
+            <header id="fase1">
+                <div id="text">
+                    <h1>Descubra Mais com Precisão: <br>
+                        Previsões do Tempo e endereços <br>
+                           em tempo real.</h1>
+                </div>
+               <div id="img">
+                <img src="nuvem.svg" alt="">
+               </div>
+            </header>
+            <!--Formulario-->
+            <form class="form" action="https://formspree.io/f/mpzvyngo" method="post">
+                <div class="form-group">
+                    <label>Primeiro Nome:</label> <br>
+                    <input type="text" required name="nome" id="first-name" placeholder="Insira seu primeiro nome">
+                </div>
+                <div class="form-group">
+                    <label> E-mail:</label> <br>
+                    <input type="email" required= name="email" id="email"  placeholder="Insira seu e-mail aqui">
+                </div>
+                <div class="form-group">
+                    <label>Digite o CEP:</label>  <br>
+                    <input id="cep" name="cep" required value="" type="text" placeholder="Insira o cep">
+                </div>
+                <div class="form-group">
+                    <label>Digite a latitude e longitude para saber a previsão:</label>  <br>
+                    <div class="lat-long">
+                     <input class="input-lat-long" name="latitude"  required type="text" placeholder="Latitude" id="lat">
+                     <input class="input-lat-long" name="longitude" type="text" required placeholder="Longitute" id="long">
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <button onclick="consultarendereco(event);getprevisao();"id="button">Acessar</button>
+                </div>
+            </form>
+            <!--CEP-->
+            <div id="form2">
+                <div class="logo">
+                    <p>Resultado da busca por CEP:</p>
+                    <img src="cep.svg" alt="">
+                </div>
+                <div id="endereco">
+                    <h1 >Logradouro/nome</h1>
+                    <h1 >Bairro/Distrito</h1>
+                    <h1 >Localidade</h1>
+                </div>
+                <div id="via-cep">
+                  <input id="rua" name="rua" type="text" readonly>
+                  <input id="bairro" name="bairro" type="text" readonly>
+                  <input id="cidade" name="Uf" type="text" readonly>
+                </div>
+    
+            </div>
+            <!--tempo-->
+            <div id="tempo">
+                <div class="logo">
+                    <p>Previsão do tempo na região:</p>
+                    <img src="tempo.svg" alt="">
+                </div>
+                <div id="previsao">
+                    <label>Previsão de tempo de acordo com a região:</label>
+                    <input id="tempo-prev" type="text">
+                </div>  
+               
+            </div>
+        </section>
+        <!--rodapé-->
+        <footer id="footer">
+           <a href="">Termos de Uso </a>
+            <a href="">Política de Privacidade</a>          
+            
+        </footer>   
+  
+</body>
+</html>
